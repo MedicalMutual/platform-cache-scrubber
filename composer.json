@@ -1,0 +1,34 @@
+{
+	"name": "mmic/cache-scrubber",
+	"type": "platform-extension",
+	"description": "Deletes all caches known to Platform (application, sessions, views, assets, and media)",
+	"authors": [
+		{
+			"name": "Medical Mutual Insurance Company of Maine",
+			"email": "webmaster@medicalmutual.com"
+		}
+	],
+	"repositories": [
+		{
+			"type": "composer",
+			"url": "https://packages.cartalyst.com"
+		}
+	],
+	"require": {
+		"php": ">=5.4.0",
+		"cartalyst/composer-installers": "1.2.*",
+		"illuminate/support": "~5.0",
+		"platform/foundation": "~2.0|~3.0"
+	},
+	"autoload": {
+		"classmap": [
+			"database/migrations",
+			"database/seeds"
+		],
+		"psr-4": {
+			"Mmic\\CacheScrubber\\": "src/"
+		}
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true
+}
