@@ -241,14 +241,6 @@ return [
 
 		'admin' => [
 
-			[
-				'slug'  => 'admin-mmic-cache-scrubber',
-				'name'  => 'Cache Scrubber',
-				'class' => 'fa fa-circle-o',
-				'uri'   => 'cache-scrubber',
-				'regex' => '/:admin\/cache-scrubber/i',
-			],
-
 		],
 
 		'main' => [
