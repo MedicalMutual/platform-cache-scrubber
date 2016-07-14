@@ -4,7 +4,7 @@ Modern frameworks utilize caching extensively, which can lead to unexpected beha
 
 Laravel includes an Artisan command that clears the "application cache", but there are several other caches, some of which are specific to Laravel, and some of which are specific to Platform, that are not cleared.
 
-This simple extension adds a new Artisan command, `cache:scrub`, which empties *all* caches known to Platform.
+This simple extension adds a new Artisan command, `cache:scrub`, which empties any number of caches that are defined in the extension's configuration file.
 
 ## Installation ##
 
@@ -48,13 +48,6 @@ All of Laravel and Platform's caches are configured to be cleared, by default:
             
             'driver' => 'local',
             'root' => realpath(public_path('cache/assets')),
-            
-        ],
-        
-        'media' => [
-            
-            'driver' => 'local',
-            'root' => realpath(public_path('cache/media')),
             
         ],
         

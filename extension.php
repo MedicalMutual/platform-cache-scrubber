@@ -55,7 +55,7 @@ return [
 	|
 	*/
 
-	'description' => 'Deletes all caches known to Platform (application, sessions, views, assets, and media)',
+	'description' => 'Clears Laravel and Platform caches, on-demand',
 
 	/*
 	|--------------------------------------------------------------------------
