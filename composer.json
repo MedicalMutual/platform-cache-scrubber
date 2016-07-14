@@ -2,6 +2,7 @@
 	"name": "mmic/platform-cache-scrubber",
 	"type": "platform-extension",
 	"description": "Deletes all caches known to Platform (application, sessions, views, assets, and media)",
+	"license": "GPLv3",
 	"authors": [
 		{
 			"name": "Medical Mutual Insurance Company of Maine",
