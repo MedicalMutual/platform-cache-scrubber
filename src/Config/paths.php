@@ -9,13 +9,6 @@ return [
 		
 	],
 	
-	'media' => [
-		
-		'driver' => 'local',
-		'root' => realpath(public_path('cache/media')),
-		
-	],
-	
 	'cache' => [
 		
 		'driver' => 'local',
