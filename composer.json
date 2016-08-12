@@ -18,8 +18,8 @@
 	"require": {
 		"php": ">=5.4.0",
 		"cartalyst/composer-installers": "1.2.*",
-		"illuminate/support": "~5.0",
-		"platform/foundation": "~2.0|~3.0"
+		"illuminate/support": "~5.1",
+		"platform/foundation": "4.0.*"
 	},
 	"autoload": {
 		"classmap": [
