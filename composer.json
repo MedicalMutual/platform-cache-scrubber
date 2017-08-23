@@ -5,7 +5,7 @@
 	"license": "GPLv3",
 	"authors": [
 		{
-			"name": "Medical Mutual Insurance Company of Maine",
+			"name": "Medical Mutual Insurance Company of Maine, Web Projects Group",
 			"email": "webmaster@medicalmutual.com"
 		}
 	],
@@ -17,9 +17,9 @@
 	],
 	"require": {
 		"php": ">=5.4.0",
-		"cartalyst/composer-installers": "1.2.*",
-		"illuminate/support": "~5.1",
-		"platform/foundation": "4.0.*"
+		"cartalyst/composer-installers": "^2.0",
+		"cartalyst/support": "^2.0",
+		"platform/foundation": "~5.0"
 	},
 	"autoload": {
 		"classmap": [
