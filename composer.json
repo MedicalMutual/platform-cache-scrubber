@@ -16,15 +16,15 @@
 		}
 	],
 	"require": {
-		"php": ">=5.4.0",
-		"cartalyst/composer-installers": "1.2.*",
-		"illuminate/support": "~5.1",
-		"platform/foundation": "4.0.*"
+		"php": ">=5.6.4",
+		"cartalyst/composer-installers": "^2.0",
+		"cartalyst/support": "^2.0",
+		"platform/foundation": "~6.0"
 	},
 	"autoload": {
 		"classmap": [
-			"database/migrations",
-			"database/seeds"
+			"resources/database/migrations",
+			"resources/database/seeds"
 		],
 		"psr-4": {
 			"Mmic\\CacheScrubber\\": "src/"
