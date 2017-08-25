@@ -2,7 +2,9 @@
 
 
 use App\Providers;
-use Illuminate\Support\ServiceProvider;
+
+use Cartalyst\Support\ServiceProvider;
+
 
 class CacheScrubberServiceProvider extends ServiceProvider {
 
@@ -11,7 +13,7 @@ class CacheScrubberServiceProvider extends ServiceProvider {
  */
 public function boot()
 {
-	parent::boot();
+	#parent::boot();
 }
 
 /**
