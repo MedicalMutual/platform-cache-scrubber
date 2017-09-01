@@ -33,7 +33,7 @@ protected function configureExtension()
 	$file = 'mmic.cache-scrubber.paths.php';
 	
 	$this->publishes([
-		realpath(__DIR__.'/../Config/paths.php') => config_path($file),
+		realpath(__DIR__.'/../resources/config/paths.php') => config_path($file),
 	]);
 	
 	$configFile = config_path() . '/' . $file;
