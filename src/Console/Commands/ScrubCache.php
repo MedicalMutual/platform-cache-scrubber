@@ -48,6 +48,14 @@ public function scrubCaches()
 {
 	$this->setCachePaths();
 	
+	$pathValidationResults = $this->getRealPaths($this->cachePaths);
+	
+	if (!empty($pathValidationResults['invalid'])) {
+		$this->generatePathValidationFailureMessage($pathValidationResults);
+		
+		return false;
+	}
+	
 	$filesystems = [];
 	
 	foreach ($this->cachePaths as $diskName => $properties) {
@@ -80,6 +88,55 @@ public function scrubCaches()
 public function setCachePaths()
 {
 	$this->cachePaths = config('mmic.cache-scrubber.paths');
+}
+
+public function getRealPath(string $path)
+{
+	//Check if the supplied path is a directory. This is required to mitigate
+	//the potential for an invalid path to be specified in the config and later
+	//passed through realpath(), which would return a valid path that
+	//represents the current directory. Deleting everything inside said
+	//directory could have catastrophic consequences!
+	
+	if (!empty($path) && is_dir($path)) {
+		return realpath($path);
+	}
+	else {
+		return false;
+	}
+}
+
+public function getRealPaths($paths)
+{
+	$results = ['valid' => [], 'invalid' => []];
+	
+	foreach ($paths as $name => $properties) {
+		$realPath = $this->getRealPath($properties['root']);
+		
+		if ($realPath !== false) {
+			$properties['root'] = $realPath;
+			
+			$results['valid'][$name] = $properties;
+		}
+		else {
+			$results['invalid'][$name] = $properties;
+		}
+	}
+	
+	return $results;
+}
+
+public function generatePathValidationFailureMessage($pathValidationResults)
+{
+	$this->error('One or more invalid paths is specified in the configuration (ensure that each path exists and is writable):');
+	
+	$i = 1;
+	
+	foreach ($pathValidationResults['invalid'] as $name => $properties) {
+		$this->error($i . '.) "' . $name . '" -> "' . $properties['root'] . '"');
+		
+		$i++;
+	}
 }
 
 }

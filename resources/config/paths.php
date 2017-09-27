@@ -5,28 +5,28 @@ return [
 	'assets' => [
 		
 		'driver' => 'local',
-		'root' => realpath(public_path('cache/assets')),
+		'root' => public_path('cache/assets'),
 		
 	],
 	
 	'cache' => [
 		
 		'driver' => 'local',
-		'root' => realpath(storage_path('framework/cache')),
+		'root' => storage_path('framework/cache'),
 		
 	],
 	
 	'sessions' => [
 		
 		'driver' => 'local',
-		'root' => realpath(storage_path('framework/sessions')),
+		'root' => storage_path('framework/sessions'),
 		
 	],
 	
 	'views' => [
 		
 		'driver' => 'local',
-		'root' => realpath(storage_path('framework/views')),
+		'root' => storage_path('framework/views'),
 		
 	],
 	
